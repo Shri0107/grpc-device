@@ -1,6 +1,6 @@
 
 //---------------------------------------------------------------------
-// This file is generated from NI-RFSA API metadata version 26.8.0d9999
+// This file is generated from NI-RFSA API metadata version 26.5.0d9999
 //---------------------------------------------------------------------
 // Proto file for the NI-RFSA Metadata
 //---------------------------------------------------------------------
@@ -17,23 +17,10 @@ import "session.proto";
 
 service NiRFSA {
   rpc Abort(AbortRequest) returns (AbortResponse);
-  rpc CalAdjustCalTonePower(CalAdjustCalTonePowerRequest) returns (CalAdjustCalTonePowerResponse);
-  rpc CalAdjustDeviceGain(CalAdjustDeviceGainRequest) returns (CalAdjustDeviceGainResponse);
-  rpc CalAdjustDownconverterGain(CalAdjustDownconverterGainRequest) returns (CalAdjustDownconverterGainResponse);
-  rpc CalAdjustIfAttenuationCalibration(CalAdjustIfAttenuationCalibrationRequest) returns (CalAdjustIfAttenuationCalibrationResponse);
-  rpc CalAdjustIfResponseCalibration(CalAdjustIfResponseCalibrationRequest) returns (CalAdjustIfResponseCalibrationResponse);
-  rpc CalAdjustLoExportCalibration(CalAdjustLoExportCalibrationRequest) returns (CalAdjustLoExportCalibrationResponse);
-  rpc CalAdjustRefLevelCalibration(CalAdjustRefLevelCalibrationRequest) returns (CalAdjustRefLevelCalibrationResponse);
-  rpc CalSetTemperature(CalSetTemperatureRequest) returns (CalSetTemperatureResponse);
-  rpc ChangeExtCalPassword(ChangeExtCalPasswordRequest) returns (ChangeExtCalPasswordResponse);
   rpc CheckAcquisitionStatus(CheckAcquisitionStatusRequest) returns (CheckAcquisitionStatusResponse);
   rpc ClearError(ClearErrorRequest) returns (ClearErrorResponse);
   rpc ClearSelfCalibrateRange(ClearSelfCalibrateRangeRequest) returns (ClearSelfCalibrateRangeResponse);
   rpc Close(CloseRequest) returns (CloseResponse);
-  rpc CloseCalibrationStep(CloseCalibrationStepRequest) returns (CloseCalibrationStepResponse);
-  rpc CloseExtCal(CloseExtCalRequest) returns (CloseExtCalResponse);
-  rpc CloseExternalAlignment(CloseExternalAlignmentRequest) returns (CloseExternalAlignmentResponse);
-  rpc CloseExternalAlignmentStep(CloseExternalAlignmentStepRequest) returns (CloseExternalAlignmentStepResponse);
   rpc Commit(CommitRequest) returns (CommitResponse);
   rpc ConfigureAcquisitionType(ConfigureAcquisitionTypeRequest) returns (ConfigureAcquisitionTypeResponse);
   rpc ConfigureDeembeddingTableInterpolationLinear(ConfigureDeembeddingTableInterpolationLinearRequest) returns (ConfigureDeembeddingTableInterpolationLinearResponse);
@@ -42,12 +29,12 @@ service NiRFSA {
   rpc ConfigureDigitalEdgeAdvanceTrigger(ConfigureDigitalEdgeAdvanceTriggerRequest) returns (ConfigureDigitalEdgeAdvanceTriggerResponse);
   rpc ConfigureDigitalEdgeRefTrigger(ConfigureDigitalEdgeRefTriggerRequest) returns (ConfigureDigitalEdgeRefTriggerResponse);
   rpc ConfigureDigitalEdgeStartTrigger(ConfigureDigitalEdgeStartTriggerRequest) returns (ConfigureDigitalEdgeStartTriggerResponse);
-  rpc ConfigureIqCarrierFrequency(ConfigureIqCarrierFrequencyRequest) returns (ConfigureIqCarrierFrequencyResponse);
-  rpc ConfigureIqPowerEdgeRefTrigger(ConfigureIqPowerEdgeRefTriggerRequest) returns (ConfigureIqPowerEdgeRefTriggerResponse);
-  rpc ConfigureIqRate(ConfigureIqRateRequest) returns (ConfigureIqRateResponse);
+  rpc ConfigureIQCarrierFrequency(ConfigureIQCarrierFrequencyRequest) returns (ConfigureIQCarrierFrequencyResponse);
+  rpc ConfigureIQPowerEdgeRefTrigger(ConfigureIQPowerEdgeRefTriggerRequest) returns (ConfigureIQPowerEdgeRefTriggerResponse);
+  rpc ConfigureIQRate(ConfigureIQRateRequest) returns (ConfigureIQRateResponse);
   rpc ConfigureNumberOfRecords(ConfigureNumberOfRecordsRequest) returns (ConfigureNumberOfRecordsResponse);
   rpc ConfigureNumberOfSamples(ConfigureNumberOfSamplesRequest) returns (ConfigureNumberOfSamplesResponse);
-  rpc ConfigurePxiChassisClk10(ConfigurePxiChassisClk10Request) returns (ConfigurePxiChassisClk10Response);
+  rpc ConfigurePXIChassisClk10(ConfigurePXIChassisClk10Request) returns (ConfigurePXIChassisClk10Response);
   rpc ConfigureRefClock(ConfigureRefClockRequest) returns (ConfigureRefClockResponse);
   rpc ConfigureReferenceLevel(ConfigureReferenceLevelRequest) returns (ConfigureReferenceLevelResponse);
   rpc ConfigureResolutionBandwidth(ConfigureResolutionBandwidthRequest) returns (ConfigureResolutionBandwidthResponse);
@@ -71,14 +58,12 @@ service NiRFSA {
   rpc ErrorMessage(ErrorMessageRequest) returns (ErrorMessageResponse);
   rpc ErrorQuery(ErrorQueryRequest) returns (ErrorQueryResponse);
   rpc ExportSignal(ExportSignalRequest) returns (ExportSignalResponse);
-  rpc ExtCalStoreBaselineForSelfCalibration(ExtCalStoreBaselineForSelfCalibrationRequest) returns (ExtCalStoreBaselineForSelfCalibrationResponse);
-  rpc ExternalAlignmentAdjustPreselector(ExternalAlignmentAdjustPreselectorRequest) returns (ExternalAlignmentAdjustPreselectorResponse);
-  rpc FetchIqMultiRecordComplexF32(FetchIqMultiRecordComplexF32Request) returns (FetchIqMultiRecordComplexF32Response);
-  rpc FetchIqMultiRecordComplexF64(FetchIqMultiRecordComplexF64Request) returns (FetchIqMultiRecordComplexF64Response);
-  rpc FetchIqMultiRecordComplexI16(FetchIqMultiRecordComplexI16Request) returns (FetchIqMultiRecordComplexI16Response);
-  rpc FetchIqSingleRecordComplexF32(FetchIqSingleRecordComplexF32Request) returns (FetchIqSingleRecordComplexF32Response);
-  rpc FetchIqSingleRecordComplexF64(FetchIqSingleRecordComplexF64Request) returns (FetchIqSingleRecordComplexF64Response);
-  rpc FetchIqSingleRecordComplexI16(FetchIqSingleRecordComplexI16Request) returns (FetchIqSingleRecordComplexI16Response);
+  rpc FetchIQMultiRecordComplexF32(FetchIQMultiRecordComplexF32Request) returns (FetchIQMultiRecordComplexF32Response);
+  rpc FetchIQMultiRecordComplexF64(FetchIQMultiRecordComplexF64Request) returns (FetchIQMultiRecordComplexF64Response);
+  rpc FetchIQMultiRecordComplexI16(FetchIQMultiRecordComplexI16Request) returns (FetchIQMultiRecordComplexI16Response);
+  rpc FetchIQSingleRecordComplexF32(FetchIQSingleRecordComplexF32Request) returns (FetchIQSingleRecordComplexF32Response);
+  rpc FetchIQSingleRecordComplexF64(FetchIQSingleRecordComplexF64Request) returns (FetchIQSingleRecordComplexF64Response);
+  rpc FetchIQSingleRecordComplexI16(FetchIQSingleRecordComplexI16Request) returns (FetchIQSingleRecordComplexI16Response);
   rpc GetAttributeViBoolean(GetAttributeViBooleanRequest) returns (GetAttributeViBooleanResponse);
   rpc GetAttributeViInt32(GetAttributeViInt32Request) returns (GetAttributeViInt32Response);
   rpc GetAttributeViInt64(GetAttributeViInt64Request) returns (GetAttributeViInt64Response);
@@ -95,7 +80,6 @@ service NiRFSA {
   rpc GetExtCalRecommendedInterval(GetExtCalRecommendedIntervalRequest) returns (GetExtCalRecommendedIntervalResponse);
   rpc GetFetchBacklog(GetFetchBacklogRequest) returns (GetFetchBacklogResponse);
   rpc GetFrequencyResponse(GetFrequencyResponseRequest) returns (GetFrequencyResponseResponse);
-  rpc GetGainReferenceCalBaseline(GetGainReferenceCalBaselineRequest) returns (GetGainReferenceCalBaselineResponse);
   rpc GetNormalizationCoefficients(GetNormalizationCoefficientsRequest) returns (GetNormalizationCoefficientsResponse);
   rpc GetNumberOfSpectralLines(GetNumberOfSpectralLinesRequest) returns (GetNumberOfSpectralLinesResponse);
   rpc GetRelayName(GetRelayNameRequest) returns (GetRelayNameResponse);
@@ -103,23 +87,19 @@ service NiRFSA {
   rpc GetScalingCoefficients(GetScalingCoefficientsRequest) returns (GetScalingCoefficientsResponse);
   rpc GetSelfCalLastDateAndTime(GetSelfCalLastDateAndTimeRequest) returns (GetSelfCalLastDateAndTimeResponse);
   rpc GetSelfCalLastTemp(GetSelfCalLastTempRequest) returns (GetSelfCalLastTempResponse);
-  rpc GetSpectralInfoForSmt(GetSpectralInfoForSmtRequest) returns (GetSpectralInfoForSmtResponse);
+  rpc GetSpectralInfoForSMT(GetSpectralInfoForSMTRequest) returns (GetSpectralInfoForSMTResponse);
   rpc GetStreamEndpointHandle(GetStreamEndpointHandleRequest) returns (GetStreamEndpointHandleResponse);
   rpc GetTerminalName(GetTerminalNameRequest) returns (GetTerminalNameResponse);
   rpc GetUserData(GetUserDataRequest) returns (GetUserDataResponse);
   rpc Init(InitRequest) returns (InitResponse);
-  rpc InitExtCal(InitExtCalRequest) returns (InitExtCalResponse);
   rpc InitWithOptions(InitWithOptionsRequest) returns (InitWithOptionsResponse);
-  rpc InitializeCalibrationStep(InitializeCalibrationStepRequest) returns (InitializeCalibrationStepResponse);
-  rpc InitializeExternalAlignment(InitializeExternalAlignmentRequest) returns (InitializeExternalAlignmentResponse);
-  rpc InitializeExternalAlignmentStep(InitializeExternalAlignmentStepRequest) returns (InitializeExternalAlignmentStepResponse);
   rpc Initiate(InitiateRequest) returns (InitiateResponse);
   rpc InvalidateAllAttributes(InvalidateAllAttributesRequest) returns (InvalidateAllAttributesResponse);
   rpc IsSelfCalValid(IsSelfCalValidRequest) returns (IsSelfCalValidResponse);
   rpc LoadConfigurationsFromFile(LoadConfigurationsFromFileRequest) returns (LoadConfigurationsFromFileResponse);
   rpc LockSession(LockSessionRequest) returns (LockSessionResponse);
   rpc PerformThermalCorrection(PerformThermalCorrectionRequest) returns (PerformThermalCorrectionResponse);
-  rpc ReadIqSingleRecordComplexF64(ReadIqSingleRecordComplexF64Request) returns (ReadIqSingleRecordComplexF64Response);
+  rpc ReadIQSingleRecordComplexF64(ReadIQSingleRecordComplexF64Request) returns (ReadIQSingleRecordComplexF64Response);
   rpc ReadPowerSpectrumF32(ReadPowerSpectrumF32Request) returns (ReadPowerSpectrumF32Response);
   rpc ReadPowerSpectrumF64(ReadPowerSpectrumF64Request) returns (ReadPowerSpectrumF64Response);
   rpc Reset(ResetRequest) returns (ResetResponse);
@@ -430,7 +410,6 @@ enum NiRFSAInt32AttributeValues {
   NIRFSA_INT32_DEEMBEDDING_TYPE_VAL_DEEMBEDDING_TYPE_SCALAR = 3901;
   NIRFSA_INT32_DEEMBEDDING_TYPE_VAL_DEEMBEDDING_TYPE_VECTOR = 3902;
   NIRFSA_INT32_DEEMBEDDING_TYPE_VAL_DEEMBEDDING_TYPE_AMPLITUDE_FLATNESS = 3903;
-  NIRFSA_INT32_DEEMBEDDING_TYPE_VAL_DEEMBEDDING_TYPE_AMPLITUDE_AND_PHASE_FLATNESS = 3904;
   NIRFSA_INT32_DOWNCONVERTER_FREQUENCY_OFFSET_MODE_VAL_AUTOMATIC = 1903;
   NIRFSA_INT32_DOWNCONVERTER_FREQUENCY_OFFSET_MODE_VAL_ENABLED = 1901;
   NIRFSA_INT32_DOWNCONVERTER_FREQUENCY_OFFSET_MODE_VAL_USER_DEFINED = 1904;
@@ -667,112 +646,6 @@ message AbortResponse {
   int32 status = 1;
 }
 
-message CalAdjustCalTonePowerRequest {
-  nidevice_grpc.Session vi = 1;
-  string channel_list = 2;
-  double measurement = 3;
-}
-
-message CalAdjustCalTonePowerResponse {
-  int32 status = 1;
-}
-
-message CalAdjustDeviceGainRequest {
-  nidevice_grpc.Session vi = 1;
-  string channel_list = 2;
-  double frequency = 3;
-  double gain = 4;
-}
-
-message CalAdjustDeviceGainResponse {
-  int32 status = 1;
-}
-
-message CalAdjustDownconverterGainRequest {
-  nidevice_grpc.Session vi = 1;
-  string channel_list = 2;
-  double frequency = 3;
-  double gain = 4;
-}
-
-message CalAdjustDownconverterGainResponse {
-  int32 status = 1;
-}
-
-message CalAdjustIfAttenuationCalibrationRequest {
-  nidevice_grpc.Session vi = 1;
-  string channel_list = 2;
-  sint32 if_filter = 3;
-  sint32 number_of_attenuators = 4;
-  double measurement = 5;
-}
-
-message CalAdjustIfAttenuationCalibrationResponse {
-  int32 status = 1;
-  double attenuator_settings = 2;
-}
-
-message CalAdjustIfResponseCalibrationRequest {
-  nidevice_grpc.Session vi = 1;
-  string channel_list = 2;
-  sint32 if_filter = 3;
-  double rf_frequency = 4;
-  double band_width = 5;
-  sint32 number_of_measurements = 6;
-}
-
-message CalAdjustIfResponseCalibrationResponse {
-  int32 status = 1;
-  double measurements = 2;
-}
-
-message CalAdjustLoExportCalibrationRequest {
-  nidevice_grpc.Session vi = 1;
-  string channel_list = 2;
-  sint32 lo_number = 3;
-  sint32 number_of_frequency_points = 4;
-}
-
-message CalAdjustLoExportCalibrationResponse {
-  int32 status = 1;
-  double frequency_points = 2;
-  double lo_attenuation = 3;
-}
-
-message CalAdjustRefLevelCalibrationRequest {
-  nidevice_grpc.Session vi = 1;
-  string channel_list = 2;
-  sint32 reference_level_data_type = 3;
-  sint32 rf_band = 4;
-  sint32 attenuator_table_number = 5;
-  double frequency = 6;
-  double measurement = 7;
-}
-
-message CalAdjustRefLevelCalibrationResponse {
-  int32 status = 1;
-}
-
-message CalSetTemperatureRequest {
-  nidevice_grpc.Session vi = 1;
-  string channel_list = 2;
-  double temperature = 3;
-}
-
-message CalSetTemperatureResponse {
-  int32 status = 1;
-}
-
-message ChangeExtCalPasswordRequest {
-  nidevice_grpc.Session vi = 1;
-  string old_password = 2;
-  string new_password = 3;
-}
-
-message ChangeExtCalPasswordResponse {
-  int32 status = 1;
-}
-
 message CheckAcquisitionStatusRequest {
   nidevice_grpc.Session vi = 1;
 }
@@ -803,40 +676,6 @@ message CloseRequest {
 }
 
 message CloseResponse {
-  int32 status = 1;
-}
-
-message CloseCalibrationStepRequest {
-  nidevice_grpc.Session vi = 1;
-}
-
-message CloseCalibrationStepResponse {
-  int32 status = 1;
-}
-
-message CloseExtCalRequest {
-  nidevice_grpc.Session vi = 1;
-  sint32 action = 2;
-}
-
-message CloseExtCalResponse {
-  int32 status = 1;
-}
-
-message CloseExternalAlignmentRequest {
-  nidevice_grpc.Session vi = 1;
-  sint32 action = 2;
-}
-
-message CloseExternalAlignmentResponse {
-  int32 status = 1;
-}
-
-message CloseExternalAlignmentStepRequest {
-  nidevice_grpc.Session vi = 1;
-}
-
-message CloseExternalAlignmentStepResponse {
   int32 status = 1;
 }
 
@@ -919,17 +758,17 @@ message ConfigureDigitalEdgeStartTriggerResponse {
   int32 status = 1;
 }
 
-message ConfigureIqCarrierFrequencyRequest {
+message ConfigureIQCarrierFrequencyRequest {
   nidevice_grpc.Session vi = 1;
   string channel_list = 2;
   double carrier_frequency = 3;
 }
 
-message ConfigureIqCarrierFrequencyResponse {
+message ConfigureIQCarrierFrequencyResponse {
   int32 status = 1;
 }
 
-message ConfigureIqPowerEdgeRefTriggerRequest {
+message ConfigureIQPowerEdgeRefTriggerRequest {
   nidevice_grpc.Session vi = 1;
   string source = 2;
   double level = 3;
@@ -937,17 +776,17 @@ message ConfigureIqPowerEdgeRefTriggerRequest {
   int64 pretrigger_samples = 5;
 }
 
-message ConfigureIqPowerEdgeRefTriggerResponse {
+message ConfigureIQPowerEdgeRefTriggerResponse {
   int32 status = 1;
 }
 
-message ConfigureIqRateRequest {
+message ConfigureIQRateRequest {
   nidevice_grpc.Session vi = 1;
   string channel_list = 2;
   double iq_rate = 3;
 }
 
-message ConfigureIqRateResponse {
+message ConfigureIQRateResponse {
   int32 status = 1;
 }
 
@@ -973,12 +812,12 @@ message ConfigureNumberOfSamplesResponse {
   int32 status = 1;
 }
 
-message ConfigurePxiChassisClk10Request {
+message ConfigurePXIChassisClk10Request {
   nidevice_grpc.Session vi = 1;
   string pxi_clk10_source = 2;
 }
 
-message ConfigurePxiChassisClk10Response {
+message ConfigurePXIChassisClk10Response {
   int32 status = 1;
 }
 
@@ -1205,26 +1044,7 @@ message ExportSignalResponse {
   int32 status = 1;
 }
 
-message ExtCalStoreBaselineForSelfCalibrationRequest {
-  nidevice_grpc.Session vi = 1;
-  string password = 2;
-  int64 self_calibration_step = 3;
-}
-
-message ExtCalStoreBaselineForSelfCalibrationResponse {
-  int32 status = 1;
-}
-
-message ExternalAlignmentAdjustPreselectorRequest {
-  nidevice_grpc.Session vi = 1;
-  repeated double coefficients = 2;
-}
-
-message ExternalAlignmentAdjustPreselectorResponse {
-  int32 status = 1;
-}
-
-message FetchIqMultiRecordComplexF32Request {
+message FetchIQMultiRecordComplexF32Request {
   nidevice_grpc.Session vi = 1;
   string channel_list = 2;
   int64 starting_record = 3;
@@ -1233,13 +1053,13 @@ message FetchIqMultiRecordComplexF32Request {
   double timeout = 6;
 }
 
-message FetchIqMultiRecordComplexF32Response {
+message FetchIQMultiRecordComplexF32Response {
   int32 status = 1;
   struct NIComplexNumberF32 data = 2;
   niRFSA_wfmInfo wfm_info = 3;
 }
 
-message FetchIqMultiRecordComplexF64Request {
+message FetchIQMultiRecordComplexF64Request {
   nidevice_grpc.Session vi = 1;
   string channel_list = 2;
   int64 starting_record = 3;
@@ -1248,13 +1068,13 @@ message FetchIqMultiRecordComplexF64Request {
   double timeout = 6;
 }
 
-message FetchIqMultiRecordComplexF64Response {
+message FetchIQMultiRecordComplexF64Response {
   int32 status = 1;
   struct NIComplexNumber data = 2;
   niRFSA_wfmInfo wfm_info = 3;
 }
 
-message FetchIqMultiRecordComplexI16Request {
+message FetchIQMultiRecordComplexI16Request {
   nidevice_grpc.Session vi = 1;
   string channel_list = 2;
   int64 starting_record = 3;
@@ -1263,13 +1083,13 @@ message FetchIqMultiRecordComplexI16Request {
   double timeout = 6;
 }
 
-message FetchIqMultiRecordComplexI16Response {
+message FetchIQMultiRecordComplexI16Response {
   int32 status = 1;
   struct NIComplexI16 data = 2;
   niRFSA_wfmInfo wfm_info = 3;
 }
 
-message FetchIqSingleRecordComplexF32Request {
+message FetchIQSingleRecordComplexF32Request {
   nidevice_grpc.Session vi = 1;
   string channel_list = 2;
   int64 record_number = 3;
@@ -1277,13 +1097,13 @@ message FetchIqSingleRecordComplexF32Request {
   double timeout = 5;
 }
 
-message FetchIqSingleRecordComplexF32Response {
+message FetchIQSingleRecordComplexF32Response {
   int32 status = 1;
   struct NIComplexNumberF32 data = 2;
   niRFSA_wfmInfo wfm_info = 3;
 }
 
-message FetchIqSingleRecordComplexF64Request {
+message FetchIQSingleRecordComplexF64Request {
   nidevice_grpc.Session vi = 1;
   string channel_list = 2;
   int64 record_number = 3;
@@ -1291,13 +1111,13 @@ message FetchIqSingleRecordComplexF64Request {
   double timeout = 5;
 }
 
-message FetchIqSingleRecordComplexF64Response {
+message FetchIQSingleRecordComplexF64Response {
   int32 status = 1;
   struct NIComplexNumber data = 2;
   niRFSA_wfmInfo wfm_info = 3;
 }
 
-message FetchIqSingleRecordComplexI16Request {
+message FetchIQSingleRecordComplexI16Request {
   nidevice_grpc.Session vi = 1;
   string channel_list = 2;
   int64 record_number = 3;
@@ -1305,7 +1125,7 @@ message FetchIqSingleRecordComplexI16Request {
   double timeout = 5;
 }
 
-message FetchIqSingleRecordComplexI16Response {
+message FetchIQSingleRecordComplexI16Response {
   int32 status = 1;
   struct NIComplexI16 data = 2;
   niRFSA_wfmInfo wfm_info = 3;
@@ -1486,16 +1306,6 @@ message GetFrequencyResponseResponse {
   sint32 number_of_frequencies = 5;
 }
 
-message GetGainReferenceCalBaselineRequest {
-  nidevice_grpc.Session vi = 1;
-}
-
-message GetGainReferenceCalBaselineResponse {
-  int32 status = 1;
-  repeated double gain_reference_cal_constants = 2;
-  sint32 number_of_gain_reference_cal_constants = 3;
-}
-
 message GetNormalizationCoefficientsRequest {
   nidevice_grpc.Session vi = 1;
   string channel_list = 2;
@@ -1575,11 +1385,11 @@ message GetSelfCalLastTempResponse {
   double temp = 2;
 }
 
-message GetSpectralInfoForSmtRequest {
+message GetSpectralInfoForSMTRequest {
   nidevice_grpc.Session vi = 1;
 }
 
-message GetSpectralInfoForSmtResponse {
+message GetSpectralInfoForSMTResponse {
   int32 status = 1;
   SmtSpectrumInfo spectrum_info = 2;
 }
@@ -1627,17 +1437,6 @@ message InitResponse {
   nidevice_grpc.Session vi = 2;
 }
 
-message InitExtCalRequest {
-  string resource_name = 1;
-  string password = 2;
-  string option_string = 3;
-}
-
-message InitExtCalResponse {
-  int32 status = 1;
-  nidevice_grpc.Session vi = 2;
-}
-
 message InitWithOptionsRequest {
   string resource_name = 1;
   bool id_query = 2;
@@ -1648,34 +1447,6 @@ message InitWithOptionsRequest {
 message InitWithOptionsResponse {
   int32 status = 1;
   nidevice_grpc.Session vi = 2;
-}
-
-message InitializeCalibrationStepRequest {
-  nidevice_grpc.Session vi = 1;
-  sint32 calibration_step = 2;
-}
-
-message InitializeCalibrationStepResponse {
-  int32 status = 1;
-}
-
-message InitializeExternalAlignmentRequest {
-  string resource_name = 1;
-  string option_string = 2;
-}
-
-message InitializeExternalAlignmentResponse {
-  int32 status = 1;
-  nidevice_grpc.Session vi = 2;
-}
-
-message InitializeExternalAlignmentStepRequest {
-  nidevice_grpc.Session vi = 1;
-  int64 external_alignment_step = 2;
-}
-
-message InitializeExternalAlignmentStepResponse {
-  int32 status = 1;
 }
 
 message InitiateRequest {
@@ -1731,14 +1502,14 @@ message PerformThermalCorrectionResponse {
   int32 status = 1;
 }
 
-message ReadIqSingleRecordComplexF64Request {
+message ReadIQSingleRecordComplexF64Request {
   nidevice_grpc.Session vi = 1;
   string channel_list = 2;
   double timeout = 3;
   int64 data_array_size = 4;
 }
 
-message ReadIqSingleRecordComplexF64Response {
+message ReadIQSingleRecordComplexF64Response {
   int32 status = 1;
   struct NIComplexNumber data = 2;
   niRFSA_wfmInfo wfm_info = 3;
