@@ -97,7 +97,6 @@ service NiRFSA {
   rpc InvalidateAllAttributes(InvalidateAllAttributesRequest) returns (InvalidateAllAttributesResponse);
   rpc IsSelfCalValid(IsSelfCalValidRequest) returns (IsSelfCalValidResponse);
   rpc LoadConfigurationsFromFile(LoadConfigurationsFromFileRequest) returns (LoadConfigurationsFromFileResponse);
-  rpc LockSession(LockSessionRequest) returns (LockSessionResponse);
   rpc PerformThermalCorrection(PerformThermalCorrectionRequest) returns (PerformThermalCorrectionResponse);
   rpc ReadIQSingleRecordComplexF64(ReadIQSingleRecordComplexF64Request) returns (ReadIQSingleRecordComplexF64Response);
   rpc ReadPowerSpectrumF32(ReadPowerSpectrumF32Request) returns (ReadPowerSpectrumF32Response);
@@ -122,7 +121,6 @@ service NiRFSA {
   rpc SetAttributeViString(SetAttributeViStringRequest) returns (SetAttributeViStringResponse);
   rpc SetCalUserDefinedInfo(SetCalUserDefinedInfoRequest) returns (SetCalUserDefinedInfoResponse);
   rpc SetUserData(SetUserDataRequest) returns (SetUserDataResponse);
-  rpc UnlockSession(UnlockSessionRequest) returns (UnlockSessionResponse);
 }
 
 enum NiRFSAAttribute {
@@ -2006,15 +2004,6 @@ message LoadConfigurationsFromFileResponse {
   int32 status = 1;
 }
 
-message LockSessionRequest {
-  nidevice_grpc.Session vi = 1;
-}
-
-message LockSessionResponse {
-  int32 status = 1;
-  bool caller_has_lock = 2;
-}
-
 message PerformThermalCorrectionRequest {
   nidevice_grpc.Session vi = 1;
 }
@@ -2266,14 +2255,5 @@ message SetUserDataRequest {
 
 message SetUserDataResponse {
   int32 status = 1;
-}
-
-message UnlockSessionRequest {
-  nidevice_grpc.Session vi = 1;
-}
-
-message UnlockSessionResponse {
-  int32 status = 1;
-  bool caller_has_lock = 2;
 }
 
