@@ -1298,7 +1298,10 @@ message CommitResponse {
 
 message ConfigureAcquisitionTypeRequest {
   nidevice_grpc.Session vi = 1;
-  sint32 acquisition_type = 2;
+  oneof acquisition_type_enum {
+    AcquisitionType acquisition_type = 2;
+    sint32 acquisition_type_raw = 3;
+  }
 }
 
 message ConfigureAcquisitionTypeResponse {
@@ -1309,7 +1312,10 @@ message ConfigureDeembeddingTableInterpolationLinearRequest {
   nidevice_grpc.Session vi = 1;
   string port = 2;
   string table_name = 3;
-  sint32 format = 4;
+  oneof format_enum {
+    LinearInterpolationFormat format = 4;
+    sint32 format_raw = 5;
+  }
 }
 
 message ConfigureDeembeddingTableInterpolationLinearResponse {
@@ -1338,8 +1344,14 @@ message ConfigureDeembeddingTableInterpolationSplineResponse {
 
 message ConfigureDigitalEdgeAdvanceTriggerRequest {
   nidevice_grpc.Session vi = 1;
-  string source = 2;
-  sint32 edge = 3;
+  oneof source_enum {
+    DigitalEdgeTriggerSource source_mapped = 2;
+    string source_raw = 3;
+  }
+  oneof edge_enum {
+    DigitalEdge edge = 4;
+    sint32 edge_raw = 5;
+  }
 }
 
 message ConfigureDigitalEdgeAdvanceTriggerResponse {
@@ -1348,9 +1360,15 @@ message ConfigureDigitalEdgeAdvanceTriggerResponse {
 
 message ConfigureDigitalEdgeRefTriggerRequest {
   nidevice_grpc.Session vi = 1;
-  string source = 2;
-  sint32 edge = 3;
-  int64 pretrigger_samples = 4;
+  oneof source_enum {
+    DigitalEdgeTriggerSource source_mapped = 2;
+    string source_raw = 3;
+  }
+  oneof edge_enum {
+    DigitalEdge edge = 4;
+    sint32 edge_raw = 5;
+  }
+  int64 pretrigger_samples = 6;
 }
 
 message ConfigureDigitalEdgeRefTriggerResponse {
@@ -1359,8 +1377,14 @@ message ConfigureDigitalEdgeRefTriggerResponse {
 
 message ConfigureDigitalEdgeStartTriggerRequest {
   nidevice_grpc.Session vi = 1;
-  string source = 2;
-  sint32 edge = 3;
+  oneof source_enum {
+    DigitalEdgeTriggerSource source_mapped = 2;
+    string source_raw = 3;
+  }
+  oneof edge_enum {
+    DigitalEdge edge = 4;
+    sint32 edge_raw = 5;
+  }
 }
 
 message ConfigureDigitalEdgeStartTriggerResponse {
@@ -1381,8 +1405,11 @@ message ConfigureIQPowerEdgeRefTriggerRequest {
   nidevice_grpc.Session vi = 1;
   string source = 2;
   double level = 3;
-  sint32 slope = 4;
-  int64 pretrigger_samples = 5;
+  oneof slope_enum {
+    AnalogSlope slope = 4;
+    sint32 slope_raw = 5;
+  }
+  int64 pretrigger_samples = 6;
 }
 
 message ConfigureIQPowerEdgeRefTriggerResponse {
@@ -1423,7 +1450,10 @@ message ConfigureNumberOfSamplesResponse {
 
 message ConfigurePXIChassisClk10Request {
   nidevice_grpc.Session vi = 1;
-  string pxi_clk10_source = 2;
+  oneof pxi_clk10_source_enum {
+    PxiChassisClk10Source pxi_clk10_source_mapped = 2;
+    string pxi_clk10_source_raw = 3;
+  }
 }
 
 message ConfigurePXIChassisClk10Response {
@@ -1432,8 +1462,11 @@ message ConfigurePXIChassisClk10Response {
 
 message ConfigureRefClockRequest {
   nidevice_grpc.Session vi = 1;
-  string clock_source = 2;
-  double ref_clock_rate = 3;
+  oneof clock_source_enum {
+    RefClockSource clock_source_mapped = 2;
+    string clock_source_raw = 3;
+  }
+  double ref_clock_rate = 4;
 }
 
 message ConfigureRefClockResponse {
@@ -1535,7 +1568,10 @@ message CreateDeembeddingSparameterTableArrayRequest {
   repeated double frequencies = 4;
   repeated nidevice_grpc.NIComplexNumber sparameter_table = 5;
   sint32 number_of_ports = 6;
-  sint32 sparameter_orientation = 7;
+  oneof sparameter_orientation_enum {
+    SparameterOrientation sparameter_orientation = 7;
+    sint32 sparameter_orientation_raw = 8;
+  }
 }
 
 message CreateDeembeddingSparameterTableArrayResponse {
@@ -1547,7 +1583,10 @@ message CreateDeembeddingSparameterTableS2PFileRequest {
   string port = 2;
   string table_name = 3;
   string s2p_file_path = 4;
-  sint32 sparameter_orientation = 5;
+  oneof sparameter_orientation_enum {
+    SparameterOrientation sparameter_orientation = 5;
+    sint32 sparameter_orientation_raw = 6;
+  }
 }
 
 message CreateDeembeddingSparameterTableS2PFileResponse {
@@ -1644,9 +1683,15 @@ message ErrorQueryResponse {
 
 message ExportSignalRequest {
   nidevice_grpc.Session vi = 1;
-  sint32 signal = 2;
-  string signal_identifier = 3;
-  string output_terminal = 4;
+  oneof signal_enum {
+    Signal signal = 2;
+    sint32 signal_raw = 3;
+  }
+  string signal_identifier = 4;
+  oneof output_terminal_enum {
+    ExportTerminal output_terminal_mapped = 5;
+    string output_terminal_raw = 6;
+  }
 }
 
 message ExportSignalResponse {
@@ -1839,7 +1884,10 @@ message GetDeembeddingSparametersResponse {
 message GetDeviceResponseRequest {
   nidevice_grpc.Session vi = 1;
   string channel_list = 2;
-  sint32 device_response_type = 3;
+  oneof device_response_type_enum {
+    DeviceResponse device_response_type = 3;
+    sint32 device_response_type_raw = 4;
+  }
 }
 
 message GetDeviceResponseResponse {
@@ -2015,8 +2063,11 @@ message GetStreamEndpointHandleResponse {
 
 message GetTerminalNameRequest {
   nidevice_grpc.Session vi = 1;
-  sint32 signal = 2;
-  string signal_identifier = 3;
+  oneof signal_enum {
+    Signal signal = 2;
+    sint32 signal_raw = 3;
+  }
+  string signal_identifier = 4;
 }
 
 message GetTerminalNameResponse {
@@ -2175,7 +2226,10 @@ message ResetWithDefaultsResponse {
 
 message ResetWithOptionsRequest {
   nidevice_grpc.Session vi = 1;
-  uint64 steps_to_omit = 2;
+  oneof steps_to_omit_enum {
+    ResetWithOptionsStepsToOmit steps_to_omit = 2;
+    uint64 steps_to_omit_raw = 3;
+  }
 }
 
 message ResetWithOptionsResponse {
@@ -2212,7 +2266,10 @@ message SelfCalResponse {
 
 message SelfCalibrateRequest {
   nidevice_grpc.Session vi = 1;
-  int64 steps_to_omit = 2;
+  oneof steps_to_omit_enum {
+    SelfCalibrateSteps steps_to_omit = 2;
+    int64 steps_to_omit_raw = 3;
+  }
 }
 
 message SelfCalibrateResponse {
@@ -2221,11 +2278,14 @@ message SelfCalibrateResponse {
 
 message SelfCalibrateRangeRequest {
   nidevice_grpc.Session vi = 1;
-  int64 steps_to_omit = 2;
-  double min_frequency = 3;
-  double max_frequency = 4;
-  double min_reference_level = 5;
-  double max_reference_level = 6;
+  oneof steps_to_omit_enum {
+    SelfCalibrateSteps steps_to_omit = 2;
+    int64 steps_to_omit_raw = 3;
+  }
+  double min_frequency = 4;
+  double max_frequency = 5;
+  double min_reference_level = 6;
+  double max_reference_level = 7;
 }
 
 message SelfCalibrateRangeResponse {
@@ -2244,8 +2304,11 @@ message SelfTestResponse {
 
 message SendSoftwareEdgeTriggerRequest {
   nidevice_grpc.Session vi = 1;
-  sint32 trigger = 2;
-  string trigger_identifier = 3;
+  oneof trigger_enum {
+    Signal trigger = 2;
+    sint32 trigger_raw = 3;
+  }
+  string trigger_identifier = 4;
 }
 
 message SendSoftwareEdgeTriggerResponse {
